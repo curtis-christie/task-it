@@ -1,5 +1,3 @@
-//task-it/frontend/journal.md
-
 # 2026-01-11 14:17:08
 
 # TaskIt! Journal
