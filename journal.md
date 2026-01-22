@@ -155,3 +155,4 @@ taskPage, sidebar, directoryNav, createTaskForm, taskList, createTaskModal, task
 2026-01-21 19:47:03
 
 - started to build out main routes for root, tasks (GET, POST, PATCH, DELETE)
+- need to add routes in diff module -> controllers for route logic
