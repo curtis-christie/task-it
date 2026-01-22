@@ -9,6 +9,30 @@ dotenv.config();
 const PORT = process.env.PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI;
 
+app.get("/", (req, res) => {
+  res.status(201).send({ msg: "root route" });
+});
+
+app.get("/api/tasks", (req, res) => {
+  res.status(201).send({ msg: "get all tasks" });
+});
+
+app.get("/api/tasks/:id", (req, res) => {
+  res.status(201).send({ msg: "get one task" });
+});
+
+app.post("/api/tasks/:id", (req, res) => {
+  res.status(201).send({ msg: "add a task" });
+});
+
+app.patch("/api/tasks/:id", (req, res) => {
+  res.status(201).send({ msg: "update a task" });
+});
+
+app.delete("/api/tasks/:id", (req, res) => {
+  res.status(201).send({ msg: "delete a task" });
+});
+
 mongoose
   .connect(MONGO_URI)
   .then(() => {

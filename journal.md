@@ -151,4 +151,7 @@ taskPage, sidebar, directoryNav, createTaskForm, taskList, createTaskModal, task
 01/14/2026 17:01:40
 
 - added tailwind @apply utility style to put on div#root tag in HTML to have a better looking prototype.
--
+
+2026-01-21 19:47:03
+
+- started to build out main routes for root, tasks (GET, POST, PATCH, DELETE)
