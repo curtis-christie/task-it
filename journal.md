@@ -156,3 +156,7 @@ taskPage, sidebar, directoryNav, createTaskForm, taskList, createTaskModal, task
 
 - started to build out main routes for root, tasks (GET, POST, PATCH, DELETE)
 - need to add routes in diff module -> controllers for route logic
+
+2026-01-22 20:56:29
+
+- added a mock data server for holding tasks in development before mongoDB integration
