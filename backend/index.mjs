@@ -2,38 +2,18 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import { mockTasks } from "./src/utils/mockTasks.js";
+import tasksRouter from "./src/routes/taskRoutes.js";
 
 const app = express();
 app.use(express.json());
+app.use(tasksRouter);
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI;
 
 app.get("/", (req, res) => {
-  const tasks = mockTasks;
-  res.status(201).send(tasks);
-});
-
-app.get("/api/tasks", (req, res) => {
-  res.status(201).send({ msg: "get all tasks" });
-});
-
-app.get("/api/tasks/:id", (req, res) => {
-  res.status(201).send({ msg: "get one task" });
-});
-
-app.post("/api/tasks/:id", (req, res) => {
-  res.status(201).send({ msg: "add a task" });
-});
-
-app.patch("/api/tasks/:id", (req, res) => {
-  res.status(201).send({ msg: "update a task" });
-});
-
-app.delete("/api/tasks/:id", (req, res) => {
-  res.status(201).send({ msg: "delete a task" });
+  res.status(201).send({ msg: "index page" });
 });
 
 mongoose
