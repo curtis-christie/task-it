@@ -161,4 +161,7 @@ taskPage, sidebar, directoryNav, createTaskForm, taskList, createTaskModal, task
 - added a mock data server for holding tasks in development before mongoDB integration
 - routed GET '/' to return all tasks in the array
 
-- TODO need to add routes in diff module -> controllers for route logic
+2026-01-23 14:34:07
+
+- add route handlers to tasks routes to clean up index.mjs
+- added helpers to find task index and get task by ID

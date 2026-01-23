@@ -12,9 +12,7 @@ router.get("/api/tasks", (req, res) => {
 
 router.get("/api/tasks/:id", resolveIndexByTaskId, getTaskByIdHandler);
 
-router.post("/api/tasks/:id", (req, res) => {
-  res.status(201).send({ msg: "add a task" });
-});
+// router.post("/api/tasks/", createTaskHandler);
 
 router.patch("/api/tasks/:id", (req, res) => {
   res.status(201).send({ msg: "update a task" });
