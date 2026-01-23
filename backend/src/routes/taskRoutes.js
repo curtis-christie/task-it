@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { mockTasks } from "../utils/mockTasks.js";
+import { resolveIndexByUserId } from "../utils/middlewares.js";
 
 const router = Router();
 
@@ -21,8 +22,10 @@ router.patch("/api/tasks/:id", (req, res) => {
   res.status(201).send({ msg: "update a task" });
 });
 
-router.delete("/api/tasks/:id", (req, res) => {
-  res.status(201).send({ msg: "delete a task" });
+router.delete("/api/tasks/:id", resolveIndexByUserId, (req, res) => {
+  const { userIndex } = req;
+  mockTasks.splice(userIndex, 1);
+  return res.status(200).send({ msg: `deleted task with id of ${userIndex}` });
 });
 
 export default router;
