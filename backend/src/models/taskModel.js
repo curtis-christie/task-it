@@ -6,6 +6,12 @@ const subTaskSchema = new Schema({
     type: String,
     required: true,
   },
+  status: {
+    type: String,
+    enum: ["todo", "done"],
+    lowercase: true,
+    default: "todo",
+  },
 });
 
 const taskSchema = new Schema(
@@ -27,7 +33,7 @@ const taskSchema = new Schema(
       type: [subTaskSchema],
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 const Task = mongoose.model("Task", taskSchema);
