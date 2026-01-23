@@ -2,15 +2,18 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import { mockTasks } from "./src/utils/mockTasks.js";
 
 const app = express();
+app.use(express.json());
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI;
 
 app.get("/", (req, res) => {
-  res.status(201).send({ msg: "root route" });
+  const tasks = mockTasks;
+  res.status(201).send(tasks);
 });
 
 app.get("/api/tasks", (req, res) => {
