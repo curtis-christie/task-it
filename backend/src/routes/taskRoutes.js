@@ -1,5 +1,10 @@
 import { Router } from "express";
-import { addTaskHandler, getTaskByIdHandler } from "../handlers/tasks.js";
+import {
+  addTaskHandler,
+  deleteTaskHandler,
+  getTaskByIdHandler,
+  updateTaskHandler,
+} from "../handlers/tasks.js";
 import Task from "../models/taskModel.js";
 
 const router = Router();
@@ -13,13 +18,8 @@ router.get("/api/tasks/:id", getTaskByIdHandler);
 
 router.post("/api/tasks/", addTaskHandler);
 
-router.patch("/api/tasks/:id", (req, res) => {
-  // update a task in mongoDB
-  res.status(201).send({ msg: "update a task" });
-});
+router.patch("/api/tasks/:id", updateTaskHandler);
 
-router.delete("/api/tasks/:id", (req, res) => {
-  // delete a task by _id from mongoDB
-});
+router.delete("/api/tasks/:id", deleteTaskHandler);
 
 export default router;

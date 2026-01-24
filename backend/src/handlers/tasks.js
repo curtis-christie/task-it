@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import Task from "../models/taskModel.js";
 
+// get task by id
 export const getTaskByIdHandler = async (req, res) => {
   const id = req.params.id;
   const isValidId = mongoose.Types.ObjectId.isValid(id);
@@ -20,5 +21,33 @@ export const addTaskHandler = async (req, res) => {
 };
 
 // update task handler
+export const updateTaskHandler = async (req, res) => {
+  // update logic
+  const { id } = req.params;
+  const updates = req.body;
+  console.log(id);
+
+  try {
+    const updatedTask = await Task.findByIdAndUpdate(
+      id,
+      { $set: updates },
+      {
+        new: true,
+        runValidators: true,
+      },
+    );
+
+    if (!updatedTask) {
+      return res.status(404).send({ message: "Task not found." });
+    }
+
+    res.send(updatedTask);
+  } catch (error) {
+    res.status(400).send({ error: error.message });
+  }
+};
 
 // delete task handler
+export const deleteTaskHandler = async (req, res) => {
+  // delete logic
+};

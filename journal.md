@@ -170,5 +170,5 @@ taskPage, sidebar, directoryNav, createTaskForm, taskList, createTaskModal, task
 2026-01-24
 
 - WHAT NEEDS TO BE DONE
-- finish route handling for POST, PATCH, DELETE
+- finish route handling for POST, PATCH, DELETE - DONE
 - each task document will have a folder property to reference what folder it should be in.
