@@ -165,3 +165,4 @@ taskPage, sidebar, directoryNav, createTaskForm, taskList, createTaskModal, task
 
 - add route handlers to tasks routes to clean up index.mjs
 - added helpers to find task index and get task by ID
+- converted helpers to mongoose queries to connect DB

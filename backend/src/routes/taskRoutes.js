@@ -1,9 +1,6 @@
 import { Router } from "express";
-import { mockTasks } from "../utils/mockTasks.js";
-import { resolveIndexByTaskId } from "../utils/middlewares.js";
 import { getTaskByIdHandler } from "../handlers/tasks.js";
 import Task from "../models/taskModel.js";
-import mongoose from "mongoose";
 
 const router = Router();
 
@@ -23,11 +20,8 @@ router.patch("/api/tasks/:id", (req, res) => {
   res.status(201).send({ msg: "update a task" });
 });
 
-router.delete("/api/tasks/:id", resolveIndexByTaskId, (req, res) => {
+router.delete("/api/tasks/:id", (req, res) => {
   // delete a task by _id from mongoDB
-  const { taskIndex } = req;
-  mockTasks.splice(taskIndex, 1);
-  return res.status(200).send({ msg: `deleted task with id of ${taskIndex}` });
 });
 
 export default router;
