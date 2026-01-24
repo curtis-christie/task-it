@@ -166,3 +166,9 @@ taskPage, sidebar, directoryNav, createTaskForm, taskList, createTaskModal, task
 - add route handlers to tasks routes to clean up index.mjs
 - added helpers to find task index and get task by ID
 - converted helpers to mongoose queries to connect DB
+
+2026-01-24
+
+- WHAT NEEDS TO BE DONE
+- finish route handling for POST, PATCH, DELETE
+- each task document will have a folder property to reference what folder it should be in.

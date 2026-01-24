@@ -10,6 +10,14 @@ export const getTaskByIdHandler = async (req, res) => {
 };
 
 // add task handler
+export const addTaskHandler = async (req, res) => {
+  try {
+    const newTask = await Task.create(req.body);
+    return res.status(201).send(newTask);
+  } catch (error) {
+    return res.status(400).send(error.message);
+  }
+};
 
 // update task handler
 

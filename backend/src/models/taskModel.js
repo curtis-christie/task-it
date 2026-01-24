@@ -28,9 +28,15 @@ const taskSchema = new Schema(
       enum: ["todo", "done"],
       lowercase: true,
       default: "todo",
+      index: true,
     },
     subTasks: {
       type: [subTaskSchema],
+    },
+    folder: {
+      type: String,
+      default: "none",
+      index: true,
     },
   },
   { timestamps: true },

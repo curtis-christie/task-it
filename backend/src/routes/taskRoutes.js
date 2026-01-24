@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getTaskByIdHandler } from "../handlers/tasks.js";
+import { addTaskHandler, getTaskByIdHandler } from "../handlers/tasks.js";
 import Task from "../models/taskModel.js";
 
 const router = Router();
@@ -11,14 +11,7 @@ router.get("/api/tasks", async (req, res) => {
 
 router.get("/api/tasks/:id", getTaskByIdHandler);
 
-router.post("/api/tasks/", async (req, res) => {
-  try {
-    const newTask = await Task.create(req.body);
-    return res.status(201).send(newTask);
-  } catch (error) {
-    return res.status(400).send(error.message);
-  }
-});
+router.post("/api/tasks/", addTaskHandler);
 
 router.patch("/api/tasks/:id", (req, res) => {
   // update a task in mongoDB
