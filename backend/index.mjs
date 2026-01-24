@@ -12,7 +12,6 @@ mongoose
   .connect(MONGO_URI)
   .then(() => console.log("MongoDB Connected Successfully"))
   .catch((err) => console.log(`Error: ${err}`));
-dotenv.config();
 
 const app = createApp();
 

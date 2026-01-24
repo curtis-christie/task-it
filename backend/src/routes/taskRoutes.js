@@ -11,8 +11,13 @@ router.get("/api/tasks", async (req, res) => {
 
 router.get("/api/tasks/:id", getTaskByIdHandler);
 
-router.post("/api/tasks/", (req, res) => {
-  // add new task to mongoDB
+router.post("/api/tasks/", async (req, res) => {
+  try {
+    const newTask = await Task.create(req.body);
+    return res.status(201).send(newTask);
+  } catch (error) {
+    return res.status(400).send(error.message);
+  }
 });
 
 router.patch("/api/tasks/:id", (req, res) => {

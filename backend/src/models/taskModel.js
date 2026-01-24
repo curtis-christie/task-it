@@ -4,7 +4,7 @@ import mongoose, { Schema } from "mongoose";
 const subTaskSchema = new Schema({
   title: {
     type: String,
-    required: true,
+    required: "A name is required.",
   },
   status: {
     type: String,
@@ -18,7 +18,7 @@ const taskSchema = new Schema(
   {
     title: {
       type: String,
-      required: "title is required",
+      required: "A name is required.",
     },
     description: {
       type: String,
