@@ -1,4 +1,4 @@
-import { mockTasks } from "./mockTasks.js";
+import Task from "../models/taskModel.js";
 
 export const resolveIndexByTaskId = (req, res, next) => {
   const {

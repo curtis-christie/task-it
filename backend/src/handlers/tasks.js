@@ -1,12 +1,14 @@
-import { mockTasks } from "../utils/mockTasks.js";
+import mongoose from "mongoose";
+import Task from "../models/taskModel.js";
 
-export const getTaskByIdHandler = (req, res) => {
-  const { findTaskIndex } = req;
-  const findTask = mockTasks[findTaskIndex];
-  if (!findTask) return res.sendStatus(404);
-  return res.send(findTask);
+export const getTaskByIdHandler = async (req, res) => {
+  const id = req.params.id;
+  const isValidId = mongoose.Types.ObjectId.isValid(id);
+  if (!isValidId) return res.status(400).send({ msg: "id is an invalid ObjectId" });
+  const task = await Task.findById(id);
+  return res.status(200).send(task);
 };
 
 // export const createTaskHandler = async (req, res) => {
-//   const newTask =
-// }
+
+// };
