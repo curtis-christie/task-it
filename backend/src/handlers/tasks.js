@@ -25,7 +25,6 @@ export const updateTaskHandler = async (req, res) => {
   // update logic
   const { id } = req.params;
   const updates = req.body;
-  console.log(id);
 
   try {
     const updatedTask = await Task.findByIdAndUpdate(
@@ -50,4 +49,17 @@ export const updateTaskHandler = async (req, res) => {
 // delete task handler
 export const deleteTaskHandler = async (req, res) => {
   // delete logic
+  const { id } = req.params;
+
+  try {
+    const deletedTask = await Task.findByIdAndDelete(id);
+
+    if (!deletedTask) {
+      return res.status(404).send({ message: "Task not found" });
+    }
+
+    res.send(deletedTask);
+  } catch (error) {
+    res.status(404).send({ error: error.message });
+  }
 };
