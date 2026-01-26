@@ -177,6 +177,8 @@ taskPage, sidebar, directoryNav, createTaskForm, taskList, createTaskModal, task
 
 2026-01-26
 
+15:29:36
+
 - What does the task view page entail?
   - Header with the name of the page being viewed. All Tasks for the initial page
   - input field with an add button next to it. This adds new tasks to the current list
@@ -186,3 +188,10 @@ taskPage, sidebar, directoryNav, createTaskForm, taskList, createTaskModal, task
   - I can check off tasks to focus on active items.
   - I can edit a task’s title and description so I can refine requirements over time.
   - I can delete tasks so I can remove work that is no longer needed.
+
+15:57:39
+
+- added basic add task input and button to update task list
+- task list renders TaskItems that output task title.
+- tasks state is in top level app, input component handles task title value and creates new task object to update tasks state
+  - app passes down setTasks to input. passes tasks state to TaskList which maps out each task and passes task to TaskItem

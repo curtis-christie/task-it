@@ -18,4 +18,4 @@ function App() {
 
 export default App;
 
-//todo - add button click logic to update array of tasks, add delete button to task item
+//todo - add delete button to task item
