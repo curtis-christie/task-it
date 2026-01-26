@@ -172,3 +172,17 @@ taskPage, sidebar, directoryNav, createTaskForm, taskList, createTaskModal, task
 - WHAT NEEDS TO BE DONE
 - finish route handling for POST, PATCH, DELETE - DONE
 - each task document will have a folder property to reference what folder it should be in.
+- NEXT - tie in frontend to the BE.
+- This will include creating a basic task view page that has the ability to READ, ADD, UPDATE, DELETE
+
+2026-01-26
+
+- What does the task view page entail?
+  - Header with the name of the page being viewed. All Tasks for the initial page
+  - input field with an add button next to it. This adds new tasks to the current list
+  - the list of tasks below the input with all "todo" tasks
+  - FUNCTIONALITY TO ADD:
+  - I can add a task to a list so I can track todo items
+  - I can check off tasks to focus on active items.
+  - I can edit a task’s title and description so I can refine requirements over time.
+  - I can delete tasks so I can remove work that is no longer needed.
