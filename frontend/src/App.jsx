@@ -1,6 +1,7 @@
 //task-it/frontend/src/App.jsx
 import { useState } from "react";
 import mockTasks from "./utils/mockTasks.js";
+import TaskList from "./components/TaskList.jsx";
 
 function App() {
   const [tasks, setTasks] = useState(mockTasks);
@@ -19,11 +20,7 @@ function App() {
         onChange={(e) => setTask(e.target.value)}
       />
       <button>Add</button>
-      <div>
-        {tasks.map((task) => (
-          <p key={task.id}>{task.title}</p>
-        ))}
-      </div>
+      <TaskList tasks={tasks} />
     </>
   );
 }
