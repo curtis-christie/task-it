@@ -18,5 +18,3 @@ function App() {
 }
 
 export default App;
-
-//todo - add delete button to task item, add filter state to pass to TaskList

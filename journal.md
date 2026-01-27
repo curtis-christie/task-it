@@ -47,6 +47,7 @@ As a user...
 
 Task - {
 id: Object_id,
+folder: String,
 projectId: Task(Object_id),
 list: List(Object_id),
 category: String,
@@ -74,12 +75,6 @@ id: Object_id,
 folderId: Folder(Object_id),
 title: String,
 categories: Array
-}
-
-Folder - {
-id - Object_id,
-title - String,
-color - String
 }
 
 ## MVP - Does the app require this feature to work?
@@ -195,17 +190,34 @@ taskPage, sidebar, directoryNav, createTaskForm, taskList, createTaskModal, task
 - task list renders TaskItems that output task title.
 - tasks state is in top level app, input component handles task title value and creates new task object to update tasks state
   - app passes down setTasks to input. passes tasks state to TaskList which maps out each task and passes task to TaskItem
+- I added task filter to pass to TaskList to filter out tasks when a view(future feature) is set. now = status === "todo"
+
+2026-01-27
+
+- Status report:
+  - I can add a task to a list so I can track todo items
+    - State: tasks, filter
+    - TaskList -> TaskItem(task, filter) + AddTaskInput(setTasks)
+  - TaskList - filters tasks into filteredTasks, passes to TaskItem whom renders each task item
+  - AddTaskInput:
+    - State: task, idCount(for now)
+    - handles the addition of tasks to the list
+
+- What Next?
+  - I can check off tasks
+    - ADD checkbox to task item -> status: "done"
+    - ADD a Done bucket to hold all completed items(in future)
+  - I can delete tasks
+    - ADD a delete button to remove item from list
+  - I can set the filter
+    - TaskList handles state of filter -> filter component + taskList
 
 ---
 
-- I can add a task to a list so I can track todo items
-  - TaskList + TaskItem + input + addButton
-  - Filter tasks on status
 - I can check off tasks to focus on active items.
-  - Checkbox to complete task item, change status to "done" remove item form list
-- I can edit a task’s title and description so I can refine requirements over time.
 - I can delete tasks so I can remove work that is no longer needed.
 - I can see all task details on separate page to get overview of task and a more efficient way to edit task.
+- I can edit a task’s title and description so I can refine requirements over time.
 - I can view completed and incomplete tasks separately so I can focus on active work.
 - I want my task lists to persist after refresh so I don’t lose work when I leave the app.
 - I can create folders so I can group related task lists in one place.
