@@ -195,3 +195,19 @@ taskPage, sidebar, directoryNav, createTaskForm, taskList, createTaskModal, task
 - task list renders TaskItems that output task title.
 - tasks state is in top level app, input component handles task title value and creates new task object to update tasks state
   - app passes down setTasks to input. passes tasks state to TaskList which maps out each task and passes task to TaskItem
+
+---
+
+- I can add a task to a list so I can track todo items
+  - TaskList + TaskItem + input + addButton
+  - Filter tasks on status
+- I can check off tasks to focus on active items.
+  - Checkbox to complete task item, change status to "done" remove item form list
+- I can edit a task’s title and description so I can refine requirements over time.
+- I can delete tasks so I can remove work that is no longer needed.
+- I can see all task details on separate page to get overview of task and a more efficient way to edit task.
+- I can view completed and incomplete tasks separately so I can focus on active work.
+- I want my task lists to persist after refresh so I don’t lose work when I leave the app.
+- I can create folders so I can group related task lists in one place.
+- I can rename folders so I can reorganize my workspace as projects evolve.
+- I can delete folders so I can remove outdated or abandoned workspaces.

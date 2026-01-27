@@ -6,16 +6,17 @@ import AddTaskInput from "./components/AddTaskInput.jsx";
 
 function App() {
   const [tasks, setTasks] = useState(mockTasks);
+  const [filter, setFilter] = useState({ property: "status", value: "todo" });
 
   return (
     <>
       <h1>All Tasks</h1>
       <AddTaskInput setTasks={setTasks} />
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks} filter={filter} />
     </>
   );
 }
 
 export default App;
 
-//todo - add delete button to task item
+//todo - add delete button to task item, add filter state to pass to TaskList
