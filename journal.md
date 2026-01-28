@@ -20,28 +20,29 @@ Minimal layout with maximum features. Ability to create projects from tasks. Dif
 
 As a user...
 
-- I can add a task to the list open on the screen
-- I can check off the task to complete it so I can track my progress
-- I can edit a task’s title and description so I can refine requirements over time.
-- I can see all task details on separate page to get overview of task and a more efficient way to edit task.
-- I can delete tasks so I can remove work that is no longer needed.
-- I can assign tags (e.g., “Bug”, “Feature”, “Research”) to tasks so I can group similar work.
-- I can filter tasks by tag so I can focus on a specific type of work.
-- I can change a task’s tag so it stays accurate as work evolves.
-- I can organize my tasks in a list by categories
-- I can delete a category without deleting the tasks inside
-- I can view completed and incomplete tasks separately so I can focus on active work.
-- I want my task lists to persist after refresh so I don’t lose work when I leave the app.
-- I want tasks to maintain their order within a project so I can prioritize work manually.
-- I can create folders so I can group related task lists in one place.
-- I can rename folders so I can reorganize my workspace as projects evolve.
-- I can delete folders so I can remove outdated or abandoned workspaces.
-- I can create projects inside folders so I can separate major efforts by area or client.
-- I can create tasks within a project so I can track actionable work items.
-- I can move projects between folders so I can reorganize without recreating data.
-- I can see all tasks within a project in one view so I can understand project scope.
-- I can see how many tasks are completed vs. total in a project so I can measure progress.
-- I can delete a project and all its tasks so I can cleanly remove completed initiatives.
+- user stories
+  - I can add a task to the list open on the screen
+  - I can check off the task to complete it so I can track my progress
+  - I can edit a task’s title and description so I can refine requirements over time.
+  - I can see all task details on separate page to get overview of task and a more efficient way to edit task.
+  - I can delete tasks so I can remove work that is no longer needed.
+  - I can assign tags (e.g., “Bug”, “Feature”, “Research”) to tasks so I can group similar work.
+  - I can filter tasks by tag so I can focus on a specific type of work.
+  - I can change a task’s tag so it stays accurate as work evolves.
+  - I can organize my tasks in a list by categories
+  - I can delete a category without deleting the tasks inside
+  - I can view completed and incomplete tasks separately so I can focus on active work.
+  - I want my task lists to persist after refresh so I don’t lose work when I leave the app.
+  - I want tasks to maintain their order within a project so I can prioritize work manually.
+  - I can create folders so I can group related task lists in one place.
+  - I can rename folders so I can reorganize my workspace as projects evolve.
+  - I can delete folders so I can remove outdated or abandoned workspaces.
+  - I can create projects inside folders so I can separate major efforts by area or client.
+  - I can create tasks within a project so I can track actionable work items.
+  - I can move projects between folders so I can reorganize without recreating data.
+  - I can see all tasks within a project in one view so I can understand project scope.
+  - I can see how many tasks are completed vs. total in a project so I can measure progress.
+  - I can delete a project and all its tasks so I can cleanly remove completed initiatives.
 
 ## Data Model
 
@@ -205,21 +206,39 @@ taskPage, sidebar, directoryNav, createTaskForm, taskList, createTaskModal, task
 
 - What Next?
   - I can check off tasks
-    - ADD checkbox to task item -> status: "done"
+      <!-- - ADD checkbox to task item -> status: "done"  -->
     - ADD a Done bucket to hold all completed items(in future)
-  - I can delete tasks
-    - ADD a delete button to remove item from list
+    <!-- - I can delete tasks
+    - ADD a delete button to remove item from list -->
   - I can set the filter
     - TaskList handles state of filter -> filter component + taskList
 
+- Added checkbox button for status change, minimal styles applied
+  - I am going to wait to adjust status until mongoose is added. for now checkbox deletes item from list
+- Added a delete button to TaskItem to remove task from list
+
+2026-01-28
+
+- What Next?
+  <!-- - Add a DONE bucket where status = "done" tasks go.
+    - instead of removing "done" tasks, transitioned to toggling status. This enables "done" filter -->
+  <!-- - Add a view to see completed tasks -->
+  <!-- - Add a filter dropdown to filter the task list based on status -->
+  <!-- - Add a sort feature, title, id("created at" later with MongoDB) -->
+  -
+
+- Finished Tasks:
+  - added drop down select for filter based on status
+  - added basic sort feature -> title, id sort - ADD reverse order in future
+
 ---
 
-- I can check off tasks to focus on active items.
-- I can delete tasks so I can remove work that is no longer needed.
-- I can see all task details on separate page to get overview of task and a more efficient way to edit task.
-- I can edit a task’s title and description so I can refine requirements over time.
-- I can view completed and incomplete tasks separately so I can focus on active work.
-- I want my task lists to persist after refresh so I don’t lose work when I leave the app.
-- I can create folders so I can group related task lists in one place.
-- I can rename folders so I can reorganize my workspace as projects evolve.
-- I can delete folders so I can remove outdated or abandoned workspaces.
+- TODO TASKS
+  - I can see all task details on separate page to get overview of task and a more efficient way to edit task.
+  - I can edit a task’s title and description so I can refine requirements over time.
+  - I can view completed and incomplete tasks separately so I can focus on active work.
+  - I want my task lists to persist after refresh so I don’t lose work when I leave the app.
+  - I can create folders so I can group related task lists in one place.
+  - I can rename folders so I can reorganize my workspace as projects evolve.
+  - I can delete folders so I can remove outdated or abandoned workspaces.
+  - I can reverse the order of the sort to organize how I want.
